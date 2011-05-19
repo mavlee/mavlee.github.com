@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="food, fun, programming, mechatronics" />
+    <link rel="stylesheet" type="text/css" media="all" href="/css/mav.css">
+    {% for css in site.css %}
+    <h2>{{ css }}</h2>
+    <link rel="stylesheet" type="text/css" media="all" href="{{ css }}" />
+    {% endfor %}
+    <title>Maverick Lee - {{ page.title }}</title>
     <title>{{ page.title }}</title>
   </head>
 
   <body>
-    <h1>{{ page.title }}</h1>
-    <h2>Home</h2>
-    <h2>Blog</h2>
-    <h2>Projects</h2>
-    <h2>Resume</h2>
-    <h2>Contact</h2>
+    <div class="rightNav">
+      <h1>{{ page.title }}</h1>
+      <a href="/">Home</a>
+      <a href="/">Blog</a>
+      <a href="/projects">Projects</a>
+      <a href="/resume">Resume</a>
+      <a href="/contact">Contact</a>
+    </div>
 
     {{ content }}
   </body>
