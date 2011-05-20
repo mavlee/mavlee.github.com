@@ -1,1 +1,3 @@
-# nothing here for now
+source: .
+destination: ./_site
+plugins: ./_plugins
