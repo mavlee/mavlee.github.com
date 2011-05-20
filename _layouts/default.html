@@ -3,9 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="food, fun, programming, mechatronics" />
-    <link rel="stylesheet" type="text/css" media="all" href="/css/mav.css" />
     {% for css in site.css %}
-    <link rel="stylesheet" type="text/css" media="all" href="{{ css }}" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{ site.css_root }}/{{ css }}" />
     {% endfor %}
     <title>Maverick Lee - {{ page.title }}</title>
     <title>{{ page.title }}</title>
@@ -21,10 +20,10 @@
     <div class="rightNav">
       <h1>Maverick Lee</h1>
       <span><a href="/">Home</a></span>
-      <span><a href="/">Blog</a></span>
+      <span><a href="/blog">Blog</a></span>
       <span><a href="/projects">Projects</a></span>
       <span><a href="/resume">Resume</a></span>
-      <span><a href="/contact">Contact</a>
+      <span><a href="/about">About</a>
     </div>
   </body>
 </html>

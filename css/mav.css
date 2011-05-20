@@ -1,9 +1,9 @@
 body {
   width: 800px;
   margin: 0 auto;
-  background-color: #FFFFFF;
+  background-color: #EEEEEE;
   font-family: "ff-din-web-1","ff-din-web-2", sans-serif;
-  color: #A7A37E;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -30,12 +30,26 @@ a, a:visited {
 }
 
 .content {
+  background-color: #FFFFFF;
   position: relative;
   float: left;
-  width: 608px;
+  width: 614px;
   border: 1px black;
   padding: 7px 4px 7px 4px;
-  margin: 0 4px 0 0;
+  margin: 15px 0 0 0;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+
+.content h1, .content p, .content span {
+  margin-left: 5px;
+  margin-left: 5px;
+}
+
+.content h1 {
+  color: #193441;
+  margin: 0 auto;
 }
 
 .content a:hover {
@@ -43,16 +57,20 @@ a, a:visited {
 }
 
 .post {
+  margin-left: 5px;
+  margin-right: 5px;
   color: #000000;
-  font-size: 12px;
+  font-size: 10;
 }
 
-.post h2 {
+.post h1 {
+  font-family: Arial, Helvetica, sans-serif;
   color: #046380;
-  font-size: 18px;
+  font-size: 50px;
 }
 
 .date {
+  margin: 0 auto;
   color: #A7A37E;
   font-size: 13px;
   letter-spacing: 0.3em;
@@ -70,6 +88,7 @@ a, a:visited {
 .rightNav h1 {
   font-size: 30px;
   color: #000000;
+  margin-top: 0px;
 }
 
 .rightNav span {
@@ -79,7 +98,7 @@ a, a:visited {
   letter-spacing: 0.1em;
 }
 
-.rightNav a, a:visited {
+.rightNav a, .rightNav a:visited {
   padding-left: 9px;
   display: block;
   text-decoration: none;
