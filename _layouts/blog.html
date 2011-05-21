@@ -2,4 +2,24 @@
 layout: base
 title: Blog
 ---
-Blog Formatting goes here
+{% for post in site.posts limit:5 %}
+<div class="post">
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <span class="date">{{ post.date | date: "%A, %B %d, %Y" | upcase }}</span>
+  <br>
+  {{ post.content }}
+  <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="article_1_identifier">First article</a>
+</div>
+<hr/>
+{% endfor %}
+
+<script type="text/javascript">
+  var disqus_shortname = 'mavericklee';
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+
