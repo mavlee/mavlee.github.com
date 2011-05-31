@@ -1,0 +1,38 @@
+#disqus_thread {
+  font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+}
+
+#dsq-content #dsq-comments .dsq-comment-header {
+  background: #xxxxxx; /* Header background color */
+  border-top:#xxxxxx 1px solid; /* Header top border */
+  border-left:#xxxxxx 1px solid; /* Header left border */
+  border-right:#xxxxxx 1px solid; /* Header bottom border */
+}
+
+#dsq-content #dsq-comments .dsq-comment-body {
+  padding: 0.571em 0.786em; /* Space between comment text and border */
+  background: #xxxxxx; /* Comment body background color */
+  min-height:70px; /* Minimum comment body box height */
+  border-bottom:#xxxxxx 1px solid; /* Comment body bottom border */
+  border-left:#xxxxxx 1px solid; /* Comment body left border */
+  border-right:#xxxxxx 1px solid; /* Comment body right border */
+  border-top:#xxxxxx 1px solid; /* Comment body top border */
+  font-family: Lucida Sans Unicode, Helvetica, sans-serif;
+  font-size: 13px; /* Font used for comment text */
+}
+
+.dsq-options {
+  display: none; /* Turns off various disqus options */
+}
+
+.dsq-dc-logo {
+  display: none; /* Turns off display of disqus logo */
+}
+
+#dsq-content #dsq-comments .dsq-comment-footer {
+  display: none; /* Turns off comment footer */
+}
+
+#dsq-content #dsq-comments .dsq-comment {
+  margin-bottom: 25px; /* Space between two comments */
+}

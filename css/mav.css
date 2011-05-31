@@ -12,6 +12,10 @@ a, a:visited {
   color: #046380;
 }
 
+img {
+  width: 604px;
+}
+
 .content {
   background-color: #FFFFFF;
   position: relative;
