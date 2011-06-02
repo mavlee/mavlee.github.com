@@ -12,13 +12,13 @@
 #dsq-content #dsq-comments .dsq-comment-body {
   padding: 0.571em 0.786em; /* Space between comment text and border */
   background: #xxxxxx; /* Comment body background color */
-  min-height:70px; /* Minimum comment body box height */
+  min-height:50px; /* Minimum comment body box height */
   border-bottom:#xxxxxx 1px solid; /* Comment body bottom border */
   border-left:#xxxxxx 1px solid; /* Comment body left border */
   border-right:#xxxxxx 1px solid; /* Comment body right border */
   border-top:#xxxxxx 1px solid; /* Comment body top border */
-  font-family: Lucida Sans Unicode, Helvetica, sans-serif;
-  font-size: 13px; /* Font used for comment text */
+  font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+  font-size: 11px; /* Font used for comment text */
 }
 
 .dsq-options {
