@@ -109,6 +109,12 @@ img {
   color: #FFFFFF;
 }
 
+.shadow {
+  -moz-box-shadow: 3px 3px 4px #CCCCCC;  
+  -webkit-box-shadow: 3px 3px 4px #CCCCCC;
+  box-shadow: 3px 3px 4px #CCCCCC;
+}
+
 #disqus_thread {
   margin-right: 5px;
   margin-left: 5px;
