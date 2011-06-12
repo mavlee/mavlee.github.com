@@ -13,7 +13,11 @@ a, a:visited {
 }
 
 img {
-  width: 596px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 596px;
+  max-height: 600px;
 }
 
 .content {
