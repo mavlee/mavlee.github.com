@@ -1,0 +1,13 @@
+---
+layout: post
+title: WebGL and Spheres
+category: programming
+---
+
+<p>Side note: My first programming-ish post finally!  I was afraid this was turning out to become only a food blog</p>
+<p>A few days ago (Thursday) me and my friends went to a Hackathon organized by TopHat Monocole with a WebGL theme.  At first I thought we would be doing whatever we wanted and we would make whatever, but it turns out we had to make a game.  On the plus side, there were prizes for the best and worst game but sadly I didn't win anything.</p>
+<p>The second surprise of the day was that we were to use a neat javascript library, <a title="Three.js" href="https://github.com/mrdoob/three.js/">Three.js</a>.  While neat, I thought we were going to be using WebGL directly.</p>
+<p><strong>Rant:</strong> I don't have a well-functioning laptop with a graphics card, need one for WebGL.  As such, my game is using canvas (but that can be easily changed).</p>
+<p>Three.js allows for lots of fancy WebGL stuff to be done easily.  First, an object can be created by declaring a "Mesh." A mesh is basically comprised of two things, the geometry of the object, and the material that it is made out of.  Next, a light source can be added to give it more of a 3D look (I couldn't get that work).  Once objects are created they can be added to the scene, which is basically the display box.  Another neat thing is that the camera can move, allowing for a changing perspective on the scene.</p>
+<p>The nicest thing though, is animating the whole thing. In the animate() function the positions and shapes of objects can be set, and this will automatically be called once per frame.</p>
+<p>The game I made is inspired by Osmos, an indie game where you absorb other circular lifeforms that are smaller than you.  I've made a basic 3d version of it, which you can play <a title="SpheresGame" href="/spheresgame">here</a>.  The controls are arrow keys for x-y movement and z and c keys for z movement.  The game isn't too polished at the moment, so you'll have to refresh to start a new game.</p>
