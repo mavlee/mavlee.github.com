@@ -38,8 +38,10 @@
       camera = new THREE.Camera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
       camera.position.z = 1000;
       scene = new THREE.Scene();
-      
-      player = new THREE.Mesh( new THREE.SphereGeometry(radius, 16, 16), new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe: true}));
+
+      player = new THREE.Mesh( new THREE.SphereGeometry(radius, 16, 16), new THREE.MeshLambertMaterial({color: 0x00bb00, shading: THREE.FlatShading}));
+      //player.overdraw = true;
+      //player = new THREE.Mesh( new THREE.SphereGeometry(radius, 16, 16), new THREE.MeshBasicMaterial({color: 0x00bb00, shading: THREE.FlatShading}));
       player.position.set(0, 0, 0);
       moveSpeed = [0, 0, 0];
       scene.addObject(player);
@@ -58,7 +60,8 @@
           var sx = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
           var sy = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
           var sz = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
-          tempEnemy = new THREE.Mesh(new THREE.SphereGeometry(rad, 16, 16), new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true}));
+          tempEnemy = new THREE.Mesh(new THREE.SphereGeometry(rad, 16, 16), new THREE.MeshLambertMaterial({color: 0xbb0000, shading: THREE.FlatShading}));
+          //tempEnemy.overdraw = true;
           tempEnemy.position.set(x, y, z);
           collision = isCollide(player.position, tempEnemy.position, player.boundRadius, tempEnemy.boundRadius);
         }
@@ -67,8 +70,9 @@
         scene.addObject(tempEnemy);
       }
 
-      pointLight = new THREE.PointLight(0x0000FF);
-      pointLight.position.set(10, 50, 50);
+      scene.addLight( new THREE.AmbientLight(0xffffff));
+      pointLight = new THREE.PointLight(0xdddddd, 1, 1000);
+      pointLight.position.set(0, 0, 500);
       scene.addLight(pointLight);
 
       if (renderer != null) {
@@ -102,10 +106,10 @@
           continue;  
         }
         if (enemies[i].boundRadius < player.boundRadius) {
-          enemies[i].materials[0].color = new THREE.Color(0x0000ff);
+          enemies[i].materials[0].color = new THREE.Color(0x0000bb);
         }
         else {
-          enemies[i].materials[0].color = new THREE.Color(0xff0000);
+          enemies[i].materials[0].color = new THREE.Color(0xbb0000);
         }
         enemies[i].position.x += enemiesSpeed[i][0];
         enemies[i].position.y += enemiesSpeed[i][1];
@@ -122,7 +126,8 @@
         }
         else if (playerCollide == true && player.boundRadius > enemies[i].boundRadius) {
           scene.removeObject(player);
-          var newPlayer = new THREE.Mesh( new THREE.SphereGeometry(player.boundRadius + enemies[i].boundRadius / 4, 16, 16), new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe: true}));
+          var newPlayer = new THREE.Mesh( new THREE.SphereGeometry(player.boundRadius + enemies[i].boundRadius / 4, 16, 16), new THREE.MeshLambertMaterial({color: 0x00bb00, shading: THREE.FlatShading}));
+          //newPlayer.overdraw = true;
           newPlayer.rotation = player.rotation;
           newPlayer.position = player.position;
           player = newPlayer;
@@ -145,7 +150,8 @@
             scene.removeObject(enemies[i]);
             scene.removeObject(enemies[j]);
             totalEnemies--;
-            var newEnemy = new THREE.Mesh(new THREE.SphereGeometry(enemies[i].boundRadius + enemies[j].boundRadius / 4, 16, 16), new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true}));
+            var newEnemy = new THREE.Mesh(new THREE.SphereGeometry(enemies[i].boundRadius + enemies[j].boundRadius / 4, 16, 16), new THREE.MeshLambertMaterial({color: 0xbb0000, shading: THREE.FlatShading}));
+            //newEnemy.overdraw = true;
             newEnemy.rotation = enemies[i].rotation;
             newEnemy.position = enemies[i].position;
             enemies[i] = newEnemy;
