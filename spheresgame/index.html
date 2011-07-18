@@ -40,8 +40,6 @@
       scene = new THREE.Scene();
 
       player = new THREE.Mesh( new THREE.SphereGeometry(radius, 16, 16), new THREE.MeshLambertMaterial({color: 0x00bb00, shading: THREE.FlatShading}));
-      //player.overdraw = true;
-      //player = new THREE.Mesh( new THREE.SphereGeometry(radius, 16, 16), new THREE.MeshBasicMaterial({color: 0x00bb00, shading: THREE.FlatShading}));
       player.position.set(0, 0, 0);
       moveSpeed = [0, 0, 0];
       scene.addObject(player);
@@ -61,7 +59,6 @@
           var sy = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
           var sz = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
           tempEnemy = new THREE.Mesh(new THREE.SphereGeometry(rad, 16, 16), new THREE.MeshLambertMaterial({color: 0xbb0000, shading: THREE.FlatShading}));
-          //tempEnemy.overdraw = true;
           tempEnemy.position.set(x, y, z);
           collision = isCollide(player.position, tempEnemy.position, player.boundRadius, tempEnemy.boundRadius);
         }
@@ -127,7 +124,6 @@
         else if (playerCollide == true && player.boundRadius > enemies[i].boundRadius) {
           scene.removeObject(player);
           var newPlayer = new THREE.Mesh( new THREE.SphereGeometry(player.boundRadius + enemies[i].boundRadius / 4, 16, 16), new THREE.MeshLambertMaterial({color: 0x00bb00, shading: THREE.FlatShading}));
-          //newPlayer.overdraw = true;
           newPlayer.rotation = player.rotation;
           newPlayer.position = player.position;
           player = newPlayer;
@@ -151,7 +147,6 @@
             scene.removeObject(enemies[j]);
             totalEnemies--;
             var newEnemy = new THREE.Mesh(new THREE.SphereGeometry(enemies[i].boundRadius + enemies[j].boundRadius / 4, 16, 16), new THREE.MeshLambertMaterial({color: 0xbb0000, shading: THREE.FlatShading}));
-            //newEnemy.overdraw = true;
             newEnemy.rotation = enemies[i].rotation;
             newEnemy.position = enemies[i].position;
             enemies[i] = newEnemy;
