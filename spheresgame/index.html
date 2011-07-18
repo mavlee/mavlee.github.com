@@ -38,33 +38,42 @@
       camera = new THREE.Camera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
       camera.position.z = 1000;
       scene = new THREE.Scene();
+      
+      player = new THREE.Mesh( new THREE.SphereGeometry(radius, 16, 16), new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe: true}));
+      player.position.set(0, 0, 0);
+      moveSpeed = [0, 0, 0];
+      scene.addObject(player);
 
       enemies = new Array(enemiesSize);
       enemiesSpeed = new Array(enemiesSize);
       
       for (var i = 0; i < enemiesSize; i++) {
-        var rad = Math.floor(Math.random() * 100);
-        var x = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 600);
-        var y = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 400);
-        var z = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 400);
-        var sx = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
-        var sy = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
-        var sz = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
-        temp = new THREE.Mesh(new THREE.SphereGeometry(rad, 16, 16), new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true}));
-        temp.position.set(x, y, z);
-        enemies[i] = temp;
+        var tempEnemy;
+        var collision = true;
+        while (collision == true) {
+          var rad = Math.floor(Math.random() * 100);
+          var x = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 600);
+          var y = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 400);
+          var z = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 400);
+          var sx = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
+          var sy = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
+          var sz = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 10);
+          tempEnemy = new THREE.Mesh(new THREE.SphereGeometry(rad, 16, 16), new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true}));
+          tempEnemy.position.set(x, y, z);
+          collision = isCollide(player.position, tempEnemy.position, player.boundRadius, tempEnemy.boundRadius);
+        }
+        enemies[i] = tempEnemy;
         enemiesSpeed[i] = [sx, sy, sz];
-        scene.addObject(temp);
+        scene.addObject(tempEnemy);
       }
-
-      player = new THREE.Mesh( new THREE.SphereGeometry(radius, 16, 16), new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe: true}));
-      player.position.set(0, 0, 0);
-      scene.addObject(player);
 
       pointLight = new THREE.PointLight(0x0000FF);
       pointLight.position.set(10, 50, 50);
       scene.addLight(pointLight);
 
+      if (renderer != null) {
+        document.body.removeChild( renderer.domElement );
+      }
       // Switch to CanvasRenderer if necessary
       renderer = new THREE.CanvasRenderer();
       //renderer = new THREE.WebGLRenderer();
@@ -89,8 +98,15 @@
       player.rotation.y += 0.01;
 
       for (var i = 0; i < enemiesSize; i++) {
-        if (enemies[i] == null)
+        if (enemies[i] == null) {
           continue;  
+        }
+        if (enemies[i].boundRadius < player.boundRadius) {
+          enemies[i].materials[0].color = new THREE.Color(0x0000ff);
+        }
+        else {
+          enemies[i].materials[0].color = new THREE.Color(0xff0000);
+        }
         enemies[i].position.x += enemiesSpeed[i][0];
         enemies[i].position.y += enemiesSpeed[i][1];
         enemies[i].position.z += enemiesSpeed[i][2];
@@ -189,6 +205,11 @@
         // c key
         case 67:
           moveSpeed[2] += 1
+          break;
+        // r key - restart
+        case 82:
+          init();
+          animate();
           break;
       }
     }
