@@ -1,7 +1,7 @@
 body {
-  width: 800px;
+  width: 900px;
   margin: 0 auto;
-  background-color: #EEEEEE;
+  background-image: url("/assets/pattern.png");
   font-family: "ff-din-web-1","ff-din-web-2", sans-serif;
   color: #000000;
   text-decoration: none;
@@ -9,7 +9,7 @@ body {
 
 a, a:visited {
   text-decoration: none;
-  color: #046380;
+  color: #00717D;
 }
 
 img {
@@ -17,17 +17,17 @@ img {
   margin-left: auto;
   margin-right: auto;
   max-width: 596px;
-  max-height: 600px;
+  max-height: 650px;
 }
 
 .content {
   background-color: #FFFFFF;
   position: relative;
-  float: left;
-  width: 607px;
+  float: right;
+  width: 680px;
   border: 1px black;
   padding: 7px 4px 7px 4px;
-  margin: 10px 0 0 0;
+  margin: 10px 0 10px 0;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
@@ -36,7 +36,7 @@ img {
 
 .content h1, .content p, .content span {
   margin-left: 5px;
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .content h1 {
@@ -55,26 +55,26 @@ img {
   font-size: 10;
 }
 
-.post h1 {
+.post h1, .post h1 a {
   font-family: Arial, Helvetica, sans-serif;
-  color: #046380;
+  color: #003647;
   font-size: 50px;
 }
 
 .date {
   margin: 0 auto;
-  color: #A7A37E;
+  color: #4d4d4d;
   font-size: 13px;
   letter-spacing: 0.3em;
 }
 
 .rightNav {
-  background-color: #FFFFFF;
-  position: relative;
-  float: right;
-  width: 160px;
+  float: left;
+  background-color: white;
+  position: fixed;
+  width: 184px;
   padding: 7px 7px 7px 7px;
-  margin: 10px 0px 0 0px; 
+  margin: 10px 0px 10px 0px; 
   list-style: none;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
@@ -91,6 +91,8 @@ img {
 }
 
 .rightNav span {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
   height: 30px;
   margin-top: 1px;
   margin-bottom: 1px;
@@ -98,10 +100,11 @@ img {
 }
 
 .rightNav > span > a, .rightNav > span > a:visited {
+  margin-right: 9px;
   padding-left: 9px;
   display: block;
   text-decoration: none;
-  color: #046380;
+  color: #00717D;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
@@ -109,14 +112,14 @@ img {
 }
 
 .rightNav > span > a:hover {
-  background-color: #002F2F;
+  background-color: #00717D;
   color: #FFFFFF;
 }
 
 .shadow {
-  -moz-box-shadow: 3px 3px 4px #CCCCCC;  
-  -webkit-box-shadow: 3px 3px 4px #CCCCCC;
-  box-shadow: 3px 3px 4px #CCCCCC;
+  -moz-box-shadow: 4px 0px 5px #CCCCCC;  
+  -webkit-box-shadow: 4px 0px 5px #CCCCCC;
+  box-shadow: 4px 0px 5px #CCCCCC;
 }
 
 #disqus_thread {
@@ -127,4 +130,13 @@ img {
 .twitter-follow-button {
   margin-left: 7px;
   width: 150px;
+}
+
+.rightNav hr {
+  border: none 0;
+  border-top: 1px solid #ABABAB;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  margin-right: 8px;
+  height: 1px;
 }
