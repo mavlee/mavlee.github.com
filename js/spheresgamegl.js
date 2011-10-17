@@ -49,7 +49,7 @@ function init() {
   scene.addLight(pointLight);
 
   if (renderer == null) {
-    renderer = new THREE.CanvasRenderer();
+    renderer = new THREE.WebGLRenderer();
     renderer.setSize( 680, 500);
     document.body.childNodes[1].appendChild( renderer.domElement );
   }
