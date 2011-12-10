@@ -35,9 +35,14 @@ img {
   min-height: 290px;
 }
 
-.content h1, .content p, .content span, .content h2, .content h3 {
+.content h1, .content p, .content span, .content h2, .content h3, .content h4, .content .highlight {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.highlight span {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .content h1 {

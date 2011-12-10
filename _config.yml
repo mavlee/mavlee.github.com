@@ -17,6 +17,7 @@ asset_version: 1
 css_root: /css
 css:
 - mav.css
+- pygments.css
 #- disqus.css
 
 exclude:
