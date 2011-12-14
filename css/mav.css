@@ -35,9 +35,16 @@ img {
   min-height: 290px;
 }
 
-.content h1, .content p, .content span, .content h2, .content h3, .content h4, .content .highlight {
+.content h1, .content p, .content span, .content h2, .content h3, .content h4 {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.content .highlight {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px 20px 5px 20px;
+  background-color: #EEEEEE;
 }
 
 .highlight span {
