@@ -41,10 +41,13 @@ img {
 }
 
 .content .highlight {
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 5px 20px 5px 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px 15px 5px 15px;
   background-color: #EEEEEE;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
 }
 
 .highlight span {
