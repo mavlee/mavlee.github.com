@@ -87,7 +87,7 @@ for key, value in result.iteritems():
 print result
 {% endhighlight %}
 
-<p>The resulting map ends up being about 500kb of text, which I will try to put up somewhere, in case someone else needs it.</p>
+<p>The resulting map ends up being about 500kb of text, which I will try to put up somewhere, in case someone else needs it. <strong>EDIT: </strong><a href="/assets/data/FIPS_to_ZIPS.json">here</a></p>
 
 <h4>The Visualization</h4>
 <p>Adding in the county code to zip code map allowed me to finally get an accurate heat map.  Accurate in that all of the data was being correctly used, but the formula for calculating the level of "heat" was not tuned.  This took away a lot of the depth that the map could have shown.  I was still using the default function, with a slight modification for my county map, which had this logic:</p>
@@ -136,3 +136,5 @@ function quantize(d) {
 
 <h3>Random Thoughts and Remarks</h3>
 <p>After putting this all together, it took a couple more hours to hook this up into a usuable web page on the site, instead of a random page on my local machine being force fed a bunch of data files.  SVG is surprisingly powerful, having used for several web applications now.  Finally, this post got kind of long and took a surprisingly long time, but hopefully this offers some insight into what I'm doing.  <a href="http://www.minted.com/jobs">Minted is hiring.</a></p>
+
+<p><strong>EDIT: </strong>Due to popular demand (of one person), I've posted a FIPS to ZIP code map <a href="/assets/data/FIPS_to_ZIPS.json">here</a>.</p>
