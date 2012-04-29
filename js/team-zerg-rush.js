@@ -83,7 +83,7 @@
     return canvas.fillText("GAME OVER", BOARD_SIZE / 2 - 100, BOARD_SIZE / 2 - 20);
   };
 
-  canvasDom.onclick = function(e) {
+  canvasDom.onmousedown = function(e) {
     var x, y;
     x = e.offsetX;
     y = e.offsetY;
