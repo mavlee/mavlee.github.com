@@ -93,6 +93,10 @@
     });
   };
 
+  canvasDom.onselectstart = function() {
+    return false;
+  };
+
   canvasDom.onmouseup = function(e) {
     return window.getSelection().removeAllRanges();
   };
