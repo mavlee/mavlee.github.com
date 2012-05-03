@@ -1,0 +1,69 @@
+---
+layout: post
+title: The Process of Building a Small Project
+category: programming, node, socket.io, html5, game
+---
+
+<p>The past week I've been stuck somewhere known as home, in between school and work, with most of my friends still stuck in one of the above.  Naturally, this was a good opportunity to get some coding done and play around.  I decided to make a web game, and play around with node, coffeescript and html5 at the same time.  You can try it <a href='/teamzergrush'>here</a></p>
+<p>It took about 8 days to go from no knowledge to a working game up and running online, and I would estimate around 50 hours in total.  I'll try to go through the 8 days, because I feel like it mirrors a typical small scale learning project.  As a side note, I didn't actually start working on my completed game until day 5 (the original project is still under construction), but the process from days 1-4 is still applicable in this case.</p>
+<h3>Day 1: What the hell is going on?</h3>
+<p>The first I usually do is open up some tutorials on the various topics and tackle them one by one.  For node, I used the excellent <a href="http://www.nodebeginner.org/">node beginner book</a>.  Setting my machine up and completing the tutorial in coffeescript took me all of my day's allotted time.  At this point, I'm not feeling pretty good having gone through the tutorial without any trouble, but the more concerning thing is that I'm not sure how everything meshes together yet.</p>
+<h3>Day 2: Oh cool, that was neat and super easy</h3>
+<p>Since I wasn't sure how esactly I was going to use node, I decided to play around more with coffeescript and build something simple to draw out objects.  After looking around a bit, I also decide to use socket.io, because it provided the necessary infrastructure to build my real-time game.  At the end of the day, I have a basic grasp of socket.io and I'm feeling confident that frontend code won't be a problem with the game in the short term.</p>
+<h3>Day 3: Hack away</h3>
+<p>This day isn't really noteworthy, I spent most of the day being productive and building basic infracstructure around the game.  I did however, get burned for the first time by cofeescript.  None of my functions could call each other because they were all in separate files.  I was under the assumption that coffeescript translated exactly into javascript, but I was unaware of the wrapper preventing anything going to global space.  The temporary solution was to force it into global space, and deal with it later.</p>
+
+{% highlight coffeescript %}
+window.Swordsman = Swordsman
+{% endhighlight %}
+
+<h3>Day 4: Run into an annoying issue</h3>
+<p>So far, I had been building up a common library, to be used by the client and the server.  However, I had a large amount of trouble getting my common files to be used both by node and by the browser.  Essentially, the browser knows what files to include based on the html file, while the node server knows what it needs using the require command.  The tricky thing was that I was still moving things over to global scope.  The node server has no reference to what "window" is, and the browser does not know what "require" is.  Added in was the fact that I was inheriting classes from different files, and it because a huge mess.  Eventually, I managed to come up with this hack of a solution:</p>
+
+{% highlight coffeescript %}
+if typeof global == "undefined"
+  Unit = window.Unit
+else
+  Unit = require('../models/unit.js').Unit
+
+class Archer extends Unit
+  # Class goes here
+
+if typeof global == "undefined"
+  window.Archer = Archer
+else
+  exports.Archer = Archer
+{% endhighlight %}
+
+<p>I'm sure there's a better solution, but this managed to work on both server and client.</p>
+<h3>Day 5: Combine all the things</h3>
+<p>Here's where I went off on a wild tangent, and built a radically different game.  After seeing the 'zerg rush' google easter egg, I decided build something similar to that game.  However, I think typically the pieces start coming together.  I wanted this project to go really quickly and smoothly, so I built everything to use server-side logic, and have the client essentially do nothing but draw and feed information to the server.</p>
+<h3>Day 6: Getting it almost working</h3>
+<p>At the end of this day, I had all the components pretty much done, so I tried to get up running on a server somewhere.  Based on previous experience, I tried heroku first.  A few hours later, it was more like herofuuuuuuuu.  It turns out heroku doesn't socket.io, with a series of configurations you have to use.  In addition to that, you had to use socket.io to listen to either an express app or the native node http server.  I gave up for the night, but eventually I switched to ec2.</p>
+<h3>Day 7: Server setup, minor cleanup</h3>
+<p>EC2 micro instances are pretty slow.  It took me over an hour to install node, npm, etc.  Another thing that burned me here was trying to ssh as ec2-user instead of ubuntu, but probably my fault.  While setting up I managed to clean up some of the code and fix some minor bugs.  I got everything up and running, but the game still had 2 major bugs.</p>
+<h3>Day 8: Finish</h3>
+<p>The first of these bugs was that the game seemed to get progressively harder, without me implementing this functionality.  I had put my server computation loop inside the socket connection code, causing it be run an additional time every time a player joined, which I did whenever I refreshed my client page with changes.</p>
+
+{% highlight coffeescript %}
+io = require('socket.io').listen(8080)
+game = new Game()
+
+# Do this
+setInterval(() ->
+  game.compute_state()
+  io.sockets.emit('game data', game.save())
+, Game.UPDATE_INTERVAL)
+
+# not this
+io.sockets.on('connection', (socket) ->
+  setInterval(() ->
+    game.compute_state()
+    socket.emit('game data', game.save())
+  , Game.UPDATE_INTERVAL)
+)
+{% endhighlight %}
+
+<p>The second bug caused the game to freeze permanently occasionally, but I could never reproduce.  I used a workaround that reset the game if there were no players beforehand.</p>
+<p>The fun part of the day was playtesting and tuning.  I got a few friends and my brother to try it out.  You can try it <a href='/teamzergrush'>here</a>.  I feel the game is a little too easy with a small number of players, and too hard with a large number of players, but I haven't managed to get too people to play at the same time.</p>
+
