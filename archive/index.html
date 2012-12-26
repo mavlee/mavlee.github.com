@@ -7,7 +7,7 @@ title: Archive
 {% for post in site.posts %}
 <li>
 <span><strong><a href="{{ post.url }}">{{ post.title }}</a></strong></span>
-<span style="float:right" class="date">{{ post.date | date: "%A, %B %d, %Y" | upcase }}</span>
+<span style="float:right" class="archive-date">{{ post.date | date: "%A, %B %d, %Y" | upcase }}</span>
 </li>
 {% endfor %}
 </ul>
