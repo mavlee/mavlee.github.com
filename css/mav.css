@@ -158,7 +158,7 @@ img {
 }
 
 .shadow {
-  -moz-box-shadow: 4px 0px 5px #CCCCCC;  
+  -moz-box-shadow: 4px 0px 5px #CCCCCC;
   -webkit-box-shadow: 4px 0px 5px #CCCCCC;
   box-shadow: 4px 0px 5px #CCCCCC;
 }
@@ -168,7 +168,19 @@ img {
   margin-left: 5px;
 }
 
-.twitter-follow-button {
-  margin-left: 7px;
-  width: 150px;
+.icon, .icon:visited {
+  font-size: 35px;
+  margin-left: 9px;
+  color: #000000;
 }
+
+.github-icon:hover {
+  color: #405A6A;
+}
+
+.twitter-icon:hover {
+  color: #00ACED;
+}
+
+.linkedin-icon:hover {
+  color: #007FB2;
