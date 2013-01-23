@@ -1,5 +1,8 @@
 safe : true
 
+server : true
+auto : true
+
 base-url : /
 source : .
 destination : ./_site
