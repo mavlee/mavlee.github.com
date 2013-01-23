@@ -22,7 +22,7 @@ category: programming, data visualization, minted
 <h4>Method 1</h4>
 <p>A quick google search resulted in nothing promising, but I found this <a href="http://www.melissadata.com/lookups/CountyZip.asp?fips=01007">site</a>.  It allowed me to enter in a FIPS code and would give a table with zip codes in that county.  I decided that I would try to data mine the site.  The code went something like this:</p>
 
-{% highlight python %}
+{% highlight python linenos %}
 map = {}
 for code in fips_list:
   url = "http://www.melissadata.com/lookups/CountyZip.asp?fips=" + code
@@ -38,7 +38,7 @@ print map
 <h4>Method 2</h4>
 <p>After searching for a long while, I came across <a href="http://wonder.cdc.gov/wonder/sci_data/codes/fips/type_txt/cntyxref.asp">this site</a>, run by the Center for Disease Control and Prevention, a government organiztion.  This page had the data I needed, but it came in at about 1.3GB (unzipped).  This came in 10 text files of about 130MB each.  The data was formatted like this:<p>
 
-{% highlight text %}
+{% highlight text linenos %}
 11789000231000125432543NY103SUFFOLK
 11789000231000225442544NY103SUFFOLK
 11789000231000325452545NY103SUFFOLK
@@ -46,7 +46,7 @@ print map
 
 <p>The zip code is the first 5 digits.  The county fips code is the 2 digit state code, followed by the next 3 digits.  Of course, there's another map going from state letter codes to FIPS codes.  The code to process all of this text is below:</p>
 
-{% highlight python %}
+{% highlight python linenos %}
 # Not all states shown here
 state_map = {
   "AK":"02",
@@ -92,7 +92,7 @@ print result
 <h4>The Visualization</h4>
 <p>Adding in the county code to zip code map allowed me to finally get an accurate heat map.  Accurate in that all of the data was being correctly used, but the formula for calculating the level of "heat" was not tuned.  This took away a lot of the depth that the map could have shown.  I was still using the default function, with a slight modification for my county map, which had this logic:</p>
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 function quantize(d) {
   var orders = data[countyMap[d.id]];
   return "q" + Math.min(8, ~~(orders * 9 / 12)) + "-9";
