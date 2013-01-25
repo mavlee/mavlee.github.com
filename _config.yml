@@ -1,4 +1,4 @@
-safe : true
+safe : false
 
 server : true
 auto : true
@@ -14,6 +14,10 @@ permalink : /blog/:year/:month/:day/:title
 
 
 # My own config
+
+# sass:
+syntax: scss        # scss|sass
+style:  compressed  # nested|expanded|compact|compressed
 
 asset_version: 1
 
