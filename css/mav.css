@@ -70,7 +70,7 @@ img {
   border-radius: 7px;
 }
 
-.highlight span {
+.content .highlight span {
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -328,18 +328,6 @@ img {
   .twitter-icon {
     margin-left: 0;
     margin-right: 14px;
-  }
-
-  .github-icon {
-    color: #405A6A;
-  }
-
-  .twitter-icon {
-    color: #00ACED;
-  }
-
-  .linkedin-icon {
-    color: #0073B2;
   }
 }
 
