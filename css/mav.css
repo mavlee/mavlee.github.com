@@ -357,6 +357,8 @@ img {
 
   .nav > span > a {
     font-size: 22px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .nav span i {
@@ -367,7 +369,12 @@ img {
     font-size: 22px;
     float: none;
     margin-right: 0px;
-    padding-right: 5px;
-    padding-left: 5px;
+    margin-left: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .icon-linkedin, .icon-github {
+    margin-left: -3px;
   }
 }
