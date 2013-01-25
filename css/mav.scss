@@ -145,7 +145,7 @@ h1, h1 a {
   }
 
   span > a, span > a:visited {
-    margin: 0 9px 0 50px;
+    margin: 0 0 0 50px;
     padding: 3px 0 3px 9px;
     display: block;
     color: #00717D;
@@ -156,9 +156,6 @@ h1, h1 a {
   span > a:hover {
     color: $bg-color;
     background-color: $light-color;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
   }
 
   span i {
