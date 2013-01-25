@@ -21,7 +21,8 @@ css_root: /css
 css:
 - mav.css
 - pygments.css
-- font-awesome.css
+- fontello.css
+#- font-awesome.css
 #- disqus.css
 
 exclude:
