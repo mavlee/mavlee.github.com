@@ -1,3 +1,11 @@
+$dark-color: #193441;
+$light-color: #00717D;
+$text-color: #000000;
+$bg-color: #FFFFFF;
+$date-color: #4D4D4D;
+$code-bg-color: #EEEEEE;
+$underline-color: #ABABAB;
+
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7,30 +15,31 @@ body {
   margin: 0 auto;
   background-image: url("/assets/images/pattern.png");
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
-  color: #000000;
+  color: $text-color;
   text-decoration: none;
   list-style: none;
 }
 
 a, a:visited {
   text-decoration: none;
-  color: #00717D;
 }
 
 img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 596px;
-  max-height: 650px;
+  margin: 0 auto;
+  max-width: 670px;
+}
+
+h1, h1 a {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 45px;
+  font-weight: normal;
+  color: $dark-color;
 }
 
 .content.first-content {
   margin-top: 0px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 7px;
-  border-bottom-left-radius: 7px;
+  border-radius: 0px 0px 7px 7px;
 }
 
 .content.first-content h1 {
@@ -38,7 +47,7 @@ img {
 }
 
 .content {
-  background-color: #FFFFFF;
+  background-color: $bg-color;
   position: relative;
   float: left;
   width: 670px;
@@ -49,140 +58,112 @@ img {
   -moz-border-radius: 7px;
   border-radius: 7px;
   font-size: 18px;
-}
 
-.content p, .content span, .content h2, .content h3, .content h4, .content li {
-  margin-left: 4px;
-  margin-right: 4px;
-}
+  p a, p a:visited {
+    color: $light-color;
+  }
 
-.content li {
-  line-height: 22px;
-}
+  a:hover {
+    text-decoration: underline;
+  }
 
-.content .highlight {
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 5px 15px 5px 15px;
-  background-color: #EEEEEE;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  overflow: auto;
-}
+  p, span, h2, h3, h4, li {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
 
-.content .highlight span {
-  margin-left: 0px;
-  margin-right: 0px;
-}
+  li {
+    line-height: 22px;
+  }
 
-.content h1 {
-  font-family: "Montserrat";
-  font-size: 45px;
-  font-weight: normal;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  color: #193441;
-}
+  .highlight {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px 15px 5px 15px;
+    background-color: $code-bg-color;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    overflow: auto;
+  }
 
-.content ul {
-  padding: 0;
-  list-style: none;
-}
+  .highlight span {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 
-.content a:hover {
-  text-decoration: underline;
+  h1 {
+    margin: 0;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
 }
 
 .post {
-  color: #000000;
   list-style: disc;
 }
 
-.post h1, .post h1 a {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  color: #003647;
-  font-size: 45px;
+.date, .archive-date {
+  margin: 0 auto;
+  color: $date-color;
 }
 
 .date {
-  margin: 0 auto;
-  color: #4d4d4d;
   font-size: 14px;
   letter-spacing: 0.3em;
 }
 
 .archive-date {
-  margin: 0 auto;
-  color: #4d4d4d;
   font-size: 13px;
 }
 
 .nav {
   left: 0;
   height: 100%;
-  background-color: white;
+  background-color: $bg-color;
   position: fixed;
   width: 250px;
   padding-left: 25px;
-}
 
-.nav h1 {
-  margin-top: 27px;
-  margin-bottom: 50px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: normal;
-}
+  h1 {
+    margin: 27px 0 50px 0;
+  }
 
-.nav h1 a {
-  font-size: 45px;
-  color: #003647;
-}
+  span {
+    font-family: "Text Me One", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    height: 30px;
+    letter-spacing: 0.1em;
+  }
 
-.nav span {
-  font-family: "Text Me One", Arial, sans-serif;
-  font-weight: bold;
-  height: 30px;
-  margin-top: 1px;
-  margin-bottom: 1px;
-  letter-spacing: 0.1em;
-}
+  hr {
+    color: $underline-color;
+    margin: 3px 0 3px 50px;
+  }
 
-.nav > span > a, .nav > span > a:visited {
-  margin-top: 2px;
-  margin-left: 50px;
-  padding-left: 9px;
-  display: block;
-  text-decoration: none;
-  color: #00717D;
-  line-height: 30px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid #ABABAB;
-  font-size: 20px;
-}
+  span > a, span > a:visited {
+    margin: 0 9px 0 50px;
+    padding: 3px 0 3px 9px;
+    display: block;
+    color: #00717D;
+    line-height: 30px;
+    font-size: 20px;
+  }
 
-.nav > span > a:hover {
-  margin-right: 9px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  background-color: #00717D;
-  color: #FFFFFF;
-  border-bottom: none;
-  padding-bottom: 4px;
-}
+  span > a:hover {
+    color: $bg-color;
+    background-color: $light-color;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+  }
 
-.nav hr {
-  border: none 0;
-  border-top: 1px solid #ABABAB;
-  margin-top: 3px;
-  margin-bottom: 2px;
-  margin-left: 50px;
-  height: 1px;
-}
-
-.nav span i {
-  margin-right: 5px;
+  span i {
+    margin-right: 5px;
+  }
 }
 
 .shadow {
@@ -194,8 +175,11 @@ img {
 .content.archive h4 {
   font-weight: normal;
   font-size: 16px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0;
+
+  a, a:visited {
+    color: $light-color;
+  }
 }
 
 .content.archive {
@@ -211,7 +195,7 @@ img {
 .icon, .icon:visited {
   font-size: 22px;
   line-height: 35px;
-  color: #00717D;
+  color: $light-color;
 }
 
 .twitter-icon {
@@ -240,6 +224,10 @@ img {
     margin-top: 0px;
   }
 
+  hr {
+    display: none;
+  }
+
   .nav {
     height: 80px;
     position: relative;
@@ -248,29 +236,18 @@ img {
     float: none;
     margin: 0 auto 27px;
     padding: 7px 9px 7px 9px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-radius: 0 0 7px 7px;
   }
 
   .nav h1 {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0;
   }
 
   .nav > span > a {
     display: inherit;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    margin: 0;
+    padding: 5px 3px 5px 3px;
     font-size: 16px;
-    border-bottom: none;
-  }
-
-  .nav > span > a:hover {
-    margin-right: 0;
   }
 
   .nav span i {
@@ -314,11 +291,7 @@ img {
     width: 100%;
   }
 
-  .nav h1 {
-    margin-left: 10px;
-  }
-
-  .nav .first {
+  .nav h1, .nav .first {
     margin-left: 10px;
   }
 
@@ -339,42 +312,32 @@ img {
 
   .content {
     font-size: 16px;
-  }
 
-  .content h1 {
-    font-size: 28px;
-  }
+    h1 {
+      font-size: 28px;
+    }
 
-  .content h1 a {
-    font-size: 28px;
-    line-height: 28px;
-  }
-
-  .twitter-icon {
-    margin-left: 5px;
-    margin-right: 5px;
+    h1 a {
+      font-size: 28px;
+      line-height: 28px;
+    }
   }
 
   .nav > span > a {
     font-size: 22px;
+    padding: 0;
     padding-left: 0px;
     padding-right: 0px;
   }
 
-  .nav span i {
+  .nav span i, .icon-linkedin, .icon-github {
     margin-right: -3px;
   }
 
   .icon, .icon:visited {
     font-size: 22px;
     float: none;
-    margin-right: 0px;
-    margin-left: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-
-  .icon-linkedin, .icon-github {
-    margin-left: -3px;
+    margin: 0;
+    padding: 0;
   }
 }

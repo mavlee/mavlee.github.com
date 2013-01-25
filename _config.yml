@@ -26,7 +26,6 @@ css:
 - mav.css
 - pygments.css
 - fontello.css
-#- font-awesome.css
 #- disqus.css
 
 exclude:
