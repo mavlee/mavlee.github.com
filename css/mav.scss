@@ -22,6 +22,7 @@ body {
 
 a, a:visited {
   text-decoration: none;
+  color: $light-color;
 }
 
 img {
@@ -30,7 +31,7 @@ img {
   max-width: 670px;
 }
 
-h1, h1 a {
+.nav h1, .nav h1 a, .content h1, .content h1 a {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 45px;
   font-weight: normal;
