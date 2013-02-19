@@ -1,5 +1,11 @@
 $dark-color: #193441;
 $light-color: #00717D;
+//$dark-color: #51456B;
+//$light-color: #67617A;
+//$dark-color: #4C5C33;
+//$light-color: #6A825A;
+//$dark-color: #8C1D04;
+//$light-color: #BF2806;
 $text-color: #000000;
 $bg-color: #FFFFFF;
 $date-color: #4D4D4D;
@@ -85,7 +91,8 @@ img {
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
-    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 
   .highlight span {
@@ -149,7 +156,7 @@ img {
     margin: 0 0 0 50px;
     padding: 3px 0 3px 9px;
     display: block;
-    color: #00717D;
+    color: $light-color;
     line-height: 30px;
     font-size: 20px;
   }
