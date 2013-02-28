@@ -1,85 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="description" content="Tempo - Interactive Music Game for Kinect">
-    <title>Tempo</title>
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-23489956-1']);
-      _gaq.push(['_trackPageview']);
-    </script>
-    <script type="text/javascript">
-      if (document.location.hostname.search("mavericklee.com") !== -1) {
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
-        '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      }
-    </script>
-    <style>
-      body {
-        margin: 0 auto;
-        background-image: url("/assets/images/pattern.png");
-        font-family: Helvetica, Arial, sans-serif;
-        color: #000000;
-      }
+---
+layout: tempobase
+title: Home
+---
 
-      .nav {
-        position: relative;
-        margin: 0 auto;
-        background-image: url("/assets/images/tempoheader.png");
-        color: white;
-        width: 100%;
-        top: 0;
-        height: 200px;
-      }
+<h1>Tempo</h1>
+<h2>Better Music Interactive Game</h2>
 
-      .inner-nav {
-        width: 800px;
-        margin: 0 auto;
-      }
+<h2>The Problem</h2>
+<p>Currently there are many music games, but the majority only have preset music lists.  Playing games with new music implies waiting for a new version of the game to be released and then hoping your favourite song is included in the list.</p>
 
-      .nav h1 {
-        font-size: 50px;
-        margin-top: 0px;
-        padding-top: 50px;
-        margin-bottom: 30px;
-      }
-
-      .content {
-        width: 800px;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="nav">
-      <div class="inner-nav">
-        <h1>Tempo</h1>
-        <h2>Better Music Interactive Game</h2>
-      </div>
-    </div>
-
-    <div class="content">
-      <h2>The Problem</h2>
-      <p>Currently there are many music games, but the majority only have preset music lists.  Playing games with new music implies waiting for a new version of the game to be released and then hoping your favourite song is included in the list.</p>
-
-      <h2>The Solution</h2>
-      <p>Our solution is to provide a fun interactive game where you can choose what music you play with.</p>
-
-      <h2>The Technology</h2>
-      <h3>Sensor</h3>
-      <p>Using the Microsoft Kinect, the user's position and skeleton will be tracked.  By processing these inputs, we can decide if the player is doing the appropriate action, such as avoiding walls or hitting objects.</p>
-      <h3>Music Analysis</h3>
-      <p>The song the player selects to play will be analyzed, finding the positions of the beats, the tempo of the music, as well as the genre of the music and the type of intruments being played.  These will then be used to dynamically create new levels, resulting in limitless game playing possibilities.</p>
-      <h3>Graphics</h3>
-      <p>Using OpenGL, a 3D world will be brought to life, and the user's actions will be translated onto the screen.</p>
-
-      <h2>The Team</h2>
-      <p>The team is made up of four fourth year mechatronics engineering students: <a href="http://mavericklee.com">Maverick Lee</a>, <a href="http://hanjun.me">Hanjun Kim</a>, <a href="http://jerrysun.me">Jerry Sun</a> and Wien Leung.</p>
-    </div>
-  </body>
-</html>
+<h2>The Solution</h2>
+<p>Our solution is to provide a fun interactive game where you can choose what music you play with.</p>
