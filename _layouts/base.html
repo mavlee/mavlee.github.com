@@ -11,9 +11,11 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{ site.css_root }}/{{ css }}" />
     {% endfor %}
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-23489956-1']);
-      _gaq.push(['_trackPageview']);
+      if (document.location.hostname.search("mavericklee.com") !== -1) {
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23489956-1']);
+        _gaq.push(['_trackPageview']);
+      }
     </script>
     <title>{{ page.title }} | Maverick Lee</title>
   </head>
