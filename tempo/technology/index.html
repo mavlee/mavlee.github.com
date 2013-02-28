@@ -11,7 +11,7 @@ title: Home
 <p>A music file supplied is analysed to detect occurences of beats, or accented notes, which will then be used to dynamically create new levels, resulting in limitless game playing possibilities.</p>
 
 <img src="/assets/images/tempo/music-analysis.png">
-<span style="text-align:center;display:block"><em>Spectral Flux of a Song</em></span>
+<span style="text-align:center;display:block"><em>Beat detection applied on beginning of L'arc en Ciel's Blurry Eyes</em></span>
 
 <p>The supplied music is first read as FFT data. The spectral flux, which is the sum of the absolute value of the change in magnitude across all frequencies between samples, is calculated. A threshold value for each spectral flux is calculated by calculating a moving average. This threshold is applied to the spectral flux data, and the peaks of the resulting data are picked out. As seen in the above graph, the beats of a song can be picked out.</p>
 
