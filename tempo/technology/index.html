@@ -3,10 +3,17 @@ layout: tempobase
 title: Home
 ---
 
-<h2>The Technology</h2>
-<h3>Sensor</h3>
+<h1>The Technology</h1>
+<h2>Sensor</h2>
 <p>Using the Microsoft Kinect, the user's position and skeleton will be tracked.  By processing these inputs, we can decide if the player is doing the appropriate action, such as avoiding walls or hitting objects.</p>
-<h3>Music Analysis</h3>
-<p>The song the player selects to play will be analyzed, finding the positions of the beats, the tempo of the music, as well as the genre of the music and the type of intruments being played.  These will then be used to dynamically create new levels, resulting in limitless game playing possibilities.</p>
-<h3>Graphics</h3>
+
+<h2>Music Analysis</h2>
+<p>A music file supplied is analysed to detect occurences of beats, or accented notes, which will then be used to dynamically create new levels, resulting in limitless game playing possibilities.</p>
+
+<img src="/assets/images/tempo/music-analysis.png">
+<span style="text-align:center;display:block"><em>Spectral Flux of a Song</em></span>
+
+<p>The supplied music is first read as FFT data. The spectral flux, which is the sum of the absolute value of the change in magnitude across all frequencies between samples, is calculated. A threshold value for each spectral flux is calculated by calculating a moving average. This threshold is applied to the spectral flux data, and the peaks of the resulting data are picked out. As seen in the above graph, the beats of a song can be picked out.</p>
+
+<h2>Graphics</h2>
 <p>Using OpenGL, a 3D world will be brought to life, and the user's actions will be translated onto the screen.</p>
