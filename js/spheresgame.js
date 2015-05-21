@@ -6,7 +6,6 @@ var totalEnemies = enemiesSize;
 var moveSpeed = [0, 0, 0];
 
 init();
-animate();
 document.addEventListener("keydown", onDocumentKeyDown, false);
 
 function init() {
@@ -50,8 +49,8 @@ function init() {
 
   if (renderer == null) {
     renderer = new THREE.CanvasRenderer();
-    renderer.setSize( 680, 500);
-    document.body.childNodes[1].appendChild( renderer.domElement );
+    renderer.setSize(680, 500);
+    document.getElementById("canvas").appendChild( renderer.domElement );
   }
 }
 
@@ -73,7 +72,7 @@ function animate() {
 
   for (var i = 0; i < enemiesSize; i++) {
     if (enemies[i] == null) {
-      continue;  
+      continue;
     }
     if (enemies[i].boundRadius < player.boundRadius) {
       enemies[i].materials[0].color = new THREE.Color(0x0000bb);
@@ -161,19 +160,19 @@ function onDocumentKeyDown(event) {
       moveSpeed[0] -= 1;
       break;
       // right arrow key
-    case 39: 
+    case 39:
       moveSpeed[0] += 1;
       break;
       // down arrow key
-    case 38: 
+    case 38:
       moveSpeed[1] += 1;
       break;
       // up arrow key
-    case 40: 
+    case 40:
       moveSpeed[1] -= 1;
       break;
       // z key
-    case 90: 
+    case 90:
       moveSpeed[2] -= 1;
       break;
       // c key
