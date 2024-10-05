@@ -6,12 +6,10 @@ auto : true
 base-url : /
 source : .
 destination : ./_site
-plugins : ./_plugins
 
 pygments : true
 markdown : maruku
 permalink : /blog/:year/:month/:day/:title
-
 
 # My own config
 
