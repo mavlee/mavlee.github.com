@@ -8,7 +8,7 @@ source : .
 destination : ./_site
 
 pygments : true
-markdown : maruku
+markdown : kramdown
 permalink : /blog/:year/:month/:day/:title
 
 # My own config
