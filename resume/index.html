@@ -23,35 +23,63 @@
     <div class="section">
       <h1>Computer Proficiencies</h1>
       <ul>
-        <li><b>Languages:</b> Python, Java, C++, Scala, Javascript, HTML, CSS</li>
-        <li><b>Frameworks/Libraries:</b> node.js, django, jQuery, backbone.js, dust.js, raphael.js, Ruby on Rails</li>
+        <li><b>Languages:</b> Python, Golang, C++, Java, Javascript, HTML, CSS</li>
         <li><b>Tools:</b> vim, svn, git, bash, perf</li>
       </ul>
     </div>
 
     <div class="section">
       <h1>Work Experience</h1>
-        <table>
+      <table>
         <tr>
-          <th class="left">Software Engineer</th>
+          <th class="left">Mixpanel</th>
           <td class="right">San Francisco, California</td>
         </tr>
         <tr>
-          <td class="left company">Mixpanel</td>
-          <td class="right">July 2016 - Present</td>
+          <td class="left job-title">Product Manager</td>
+          <td class="right">Sep 2022 - Present</td>
         </tr>
       </table>
       <ul>
-        <li>Working on various parts of the backend infrastructure</li>
+        <li>Responsible for analysis workflows and capabilties - the core product of Mixpanel</li>
+        <li>Work with design, engineeering, marketing and sales partners to ship high impact projects
+          <ul>
+            <li>Spark: Mixpanel's natural language report generation tool</li>
+            <li>Metrics: align the data model of Mixpanel, and provide a primitive for Mixpanel to build on top of</li>
+          </ul>
+        </li>
+        <li>Helped shape long term direction of Mixpanel product</li>
+      </ul>
+
+      <table>
+        <tr>
+          <td class="left job-title">Engineering Manager</td>
+          <td class="right">May 2018 - Sep 2022</td>
+        </tr>
+      </table>
+      <ul>
+        <li>Leading a team of 3 - 10 engineers working across the stack</li>
+        <li>Helped revamp interviewing process for more consistency and scaling within the team</li>
+      </ul>
+
+      <table>
+        <tr>
+          <td class="left job-title">Software Engineer</td>
+          <td class="right">Jul 2016 - May 2018</td>
+        </tr>
+      </table>
+      <ul>
+        <li>Part of team rewriting and migrating in-house database to GCP</li>
+        <li>Designed and built resharding system to allow for disruption-free upgrades for high volume customers</li>
       </ul>
       
       <table>
         <tr>
-          <th class="left">Senior Software Engineer - Distributed Graph Team</th>
+          <th class="left">LinkedIn Corporation</th>
           <td class="right">Mountain View, California</td>
         </tr>
         <tr>
-          <td class="left company">LinkedIn Corporation</td>
+          <td class="left job-title">Senior Software Engineer</td>
           <td class="right">November 2014 - May 2016</td>
         </tr>
       </table>
@@ -63,11 +91,7 @@
 
       <table>
         <tr>
-          <th class="left">Software Engineer - Distributed Graph Team</th>
-          <td class="right">Mountain View, California</td>
-        </tr>
-        <tr>
-          <td class="left company">LinkedIn Corporation</td>
+          <td class="left job-title">Software Engineer</td>
           <td class="right">July 2013 - November 2014</td>
         </tr>
       </table>
@@ -79,11 +103,7 @@
 
       <table>
         <tr>
-          <th class="left">Software Engineer Intern</th>
-          <td class="right">Mountain View, California</td>
-        </tr>
-        <tr>
-          <td class="left company">LinkedIn Corporation</td>
+          <td class="left job-title">Software Engineer Intern</td>
           <td class="right">May 2012 - August 2012</td>
         </tr>
       </table>
@@ -94,31 +114,16 @@
 
       <table>
         <tr>
-          <th class="left">Software Engineer Intern</th>
+          <th class="left">Minted LLC</th>
           <td class="right">San Francisco, California</td>
         </tr>
         <tr>
-          <td class="left company">Minted LLC</td>
-          <td class="right">September 2011 - December 2011</td>
+          <td class="left job-title">Software Engineer Intern</td>
+          <td class="right">Sep 2011 - Dec 2011, Jan 2011 - Apr 2011</td>
         </tr>
       </table>
       <ul>
-        <li>Owned several product launches, resulting in products becoming a significant portion of sales</li>
         <li>Created friend referral system to help drive revenue and traffic growth</li>
-        <li>Built a sales heatmap data visualization tool using d3.js, showing areas of concentrated sales</li>
-      </ul>
-
-      <table>
-        <tr>
-          <th class="left">Software Engineer Intern</th>
-          <td class="right">San Francisco, California</td>
-        </tr>
-        <tr>
-          <td class="left company">Minted LLC</td>
-          <td class="right">January 2011 - April 2011</td>
-        </tr>
-      </table>
-      <ul>
         <li>Created a web app used to personalize customer orders, replacing legacy system and improving conversion rate</li>
         <li>Updated and created tools to streamline product launch process; reduced launch time by 50%</li>
       </ul>
@@ -132,8 +137,8 @@
           <td class="right">Waterloo, Ontario</td>
         </tr>
         <tr>
-          <td class="left company">University of Waterloo</td>
-          <td class="right">September 2008 - April 2013</td>
+          <td class="left job-title">University of Waterloo</td>
+          <td class="right">Sep 2008 - Apr 2013</td>
         </tr>
       </table>
     </div>
@@ -192,6 +197,11 @@
         margin-bottom: 2px;
       }
 
+      .section li ul {
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+
       th, td {
         padding: 0;
         line-height: 16px;
@@ -217,7 +227,7 @@
         position: absolute;
       }
 
-      .company {
+      .job-title {
         font-style: italic;
       }
     </style>
